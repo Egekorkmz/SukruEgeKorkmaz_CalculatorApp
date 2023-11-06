@@ -1,9 +1,11 @@
 package com.example.sukruegekorkmaz_hw1
 
-import CustomAnimations
+import CustomBlink
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Button
+import android.widget.TextView
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +17,9 @@ class MainActivity : AppCompatActivity() {
         this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         supportActionBar?.hide()
 
-        CustomAnimations.blink(findViewById(R.id.blink))
+        var cb = CustomBlink(findViewById<TextView>(R.id.blink))
+        cb.blink()
 
+        findViewById<Button>(R.id.button1).setOnClickListener({cb.setDuraion(2000)})
     }
 }
