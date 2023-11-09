@@ -23,7 +23,7 @@
         android:min="500" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tbSelectCourse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Select Course To Calculate"
