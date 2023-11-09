@@ -13,20 +13,31 @@
         android:layout_height="61dp"
         android:text="Grade Calculator"
         android:textAlignment="center"
-        android:textSize="34sp" />
+        android:textSize="34sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"/>
 
     <SeekBar
         android:id="@+id/sbBlink"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:max="1000"
-        android:min="500" />
+        android:min="500"
+        android:layout_marginBottom="30dp"/>
 
     <TextView
         android:id="@+id/tbSelectCourse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Select Course To Calculate"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_marginBottom="30dp"
+        android:padding="20dp"/>
+
+    <Spinner
+        android:id="@+id/spCourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"/>
 
 </LinearLayout>

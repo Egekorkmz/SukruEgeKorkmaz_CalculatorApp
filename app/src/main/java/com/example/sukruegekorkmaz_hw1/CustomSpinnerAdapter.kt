@@ -11,8 +11,8 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.contentValuesOf
 
-class CustomSpinnerAdapter(var contextt: Context, var spinnerItemValues: ArrayList<Social>)
-    : ArrayAdapter<Courses>(contextt, R.layout.spinner_item, spinnerItemValues)
+class CustomSpinnerAdapter(var contextt: Context, var spinnerItemValues: ArrayList<Cources>)
+    : ArrayAdapter<Cources>(contextt, R.layout.spinner_item, spinnerItemValues)
 {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         return getCustomView(position, convertView, parent)
@@ -27,16 +27,16 @@ class CustomSpinnerAdapter(var contextt: Context, var spinnerItemValues: ArrayLi
         val view: View = inflator.inflate(R.layout.spinner_item, parent, false)
 
         val constraintLayout:ConstraintLayout = view.findViewById(R.id.itemConstraintLayout)
-        val imgItemSocial:ImageView = view.findViewById(R.id.imgItemSocial)
-        val tvItemSocialName:TextView = view.findViewById(R.id.tvItemSocialName)
+        val imgCourse:ImageView = view.findViewById(R.id.imgCourse)
+        val tvCourseCode:TextView = view.findViewById(R.id.tvCourse)
 
-        val selectedSocial = spinnerItemValues.get(position)
-        tvItemSocialName.text = selectedSocial.getName()
-        imgItemSocial.setImageResource(selectedSocial.getImgId())
-        if (position % 2 == 0)
-            constraintLayout.setBackgroundColor(Color.BLUE)
-        else
-            constraintLayout.setBackgroundColor(Color.YELLOW)
+        val selectedCourse = spinnerItemValues.get(position)
+        tvCourseCode.text = selectedCourse.getCode()
+        imgCourse.setImageResource(selectedCourse.getImgId())
+
+        if (position % 2 != 0)
+            constraintLayout.setBackgroundColor(Color.LTGRAY)
+
         return view
     }
 }
