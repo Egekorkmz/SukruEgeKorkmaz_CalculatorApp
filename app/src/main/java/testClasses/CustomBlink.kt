@@ -1,12 +1,9 @@
-import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.widget.TextView
-import com.example.sukruegekorkmaz_hw1.R
-import kotlin.time.Duration
 
 class CustomBlink(tvTemp: TextView) {
-    var blinkDuration = 750
+    var blinkDuration = 200
     var tvTemp = tvTemp
     private val blinkAnimation = AlphaAnimation(0f, 1f)
 
@@ -21,7 +18,8 @@ class CustomBlink(tvTemp: TextView) {
         blinkDuration = duration
         blinkAnimation.duration = duration.toLong()
 
-        tvTemp.startAnimation(blinkAnimation)
+        if(blinkAnimation.repeatCount == Animation.INFINITE)
+            tvTemp.startAnimation(blinkAnimation)
     }
 
 
