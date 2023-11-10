@@ -18,12 +18,14 @@
         android:id="@+id/tvHistory"
         android:layout_width="match_parent"
         android:layout_height="310dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:layout_margin="30dp"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRadnDia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Click For Random Node"
+        android:layout_margin="30dp"/>
 
 </LinearLayout>
