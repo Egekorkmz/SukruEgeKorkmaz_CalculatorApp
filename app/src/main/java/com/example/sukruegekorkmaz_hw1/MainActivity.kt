@@ -1,6 +1,7 @@
 package com.example.sukruegekorkmaz_hw1
 
 import CustomBlink
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,6 +22,8 @@ import java.util.Collections
 class MainActivity : AppCompatActivity() {
     lateinit var sbBlink : SeekBar
     lateinit var spCourse : Spinner
+    lateinit var btnHist : Button
+    lateinit var btnGoCalc : Button
 
     lateinit var course : ArrayList<Cources>
     lateinit var adapter: CustomSpinnerAdapter
@@ -35,7 +38,9 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         sbBlink = findViewById(R.id.sbBlink)
-        spCourse = findViewById<Spinner>(R.id.spCourse)
+        spCourse = findViewById(R.id.spCourse)
+        btnHist = findViewById(R.id.btnHistory)
+        btnGoCalc = findViewById(R.id.btnGoCalc)
 
         adapter = CustomSpinnerAdapter(this, course)
         spCourse.adapter = adapter
@@ -51,6 +56,16 @@ class MainActivity : AppCompatActivity() {
             override fun onStartTrackingTouch(p0: SeekBar?) {}
             override fun onStopTrackingTouch(p0: SeekBar?) {}
         })
+
+        btnGoCalc.setOnClickListener {
+            var intent: Intent? = null
+            var temp : Int = spCourse.id
+
+            intent = Intent(this@MainActivity, GradeCalc::class.java)
+            intent.putExtra("selection", temp)
+
+            startActivity(intent)
+        }
 
     }
     fun prepareTest(){
