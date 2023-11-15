@@ -1,4 +1,4 @@
-package Structures
+package structures
 
 class Node (code : String, result : Double){
     var code = code

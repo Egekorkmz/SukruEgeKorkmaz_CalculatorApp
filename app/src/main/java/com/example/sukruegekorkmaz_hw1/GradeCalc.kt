@@ -1,7 +1,7 @@
 package com.example.sukruegekorkmaz_hw1
 
-import Structures.Hist
-import Structures.Node
+import structures.Hist
+import structures.Node
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
